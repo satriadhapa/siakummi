@@ -12,7 +12,7 @@ class ProgramStudi extends Model
     protected $fillable = [
         "NamaProdi","NIM","MataKuliah"
     ];
-    public function mahasiswa()
+    public function mahasiswa2()
     {
         return $this->hasMany(Mahasiswa::class);
     }

@@ -49,9 +49,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="form-group">
                   <input type="text" id="MataKuliah" name="MataKuliah" class="form-control" placeholder="Mata Kuliah">
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                   <input type="text" id="NamaProdi" name="NamaProdi" class="form-control" placeholder="Nama Program Studi">
-                </div>
+                </div> --}}
                 <div class="form-group">
                   <button type="submit" class="btn btn-success">Simpan</button>
                 </div>

@@ -13,7 +13,7 @@ class MahasiswaStudiController extends Controller
      */
     public function index()
     {
-        $dtmahasiswa = Mahasiswa::paginate(2);
+        $dtmahasiswa = Mahasiswa::with('namaprodi');
         return view("mahasiswa.mahasiswa", compact('dtmahasiswa'));
     }
 
@@ -35,7 +35,7 @@ class MahasiswaStudiController extends Controller
             "NIM" => $request->NIM,
             "NamaLengkap" => $request->NamaLengkap,
             "MataKuliah" => $request->MataKuliah,
-            "NamaProdi" => $request->NamaProdi
+            // "NamaProdi" => $request->NamaProdi
         ]);
 
         return redirect('mahasiswa')->with('success', 'berhasil ditambahkan!');
