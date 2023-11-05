@@ -10,6 +10,6 @@ class ProgramStudi extends Model
     protected $table = "program_studi";
     protected $primaryKey = "NamaProdi";
     protected $fillable = [
-        "NamaProdi","NIM","MataKuliah","JumlahMahasiswa","JumlahMatkul"
+        "NamaProdi","NIM","MataKuliah"
     ];
 }

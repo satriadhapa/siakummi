@@ -10,6 +10,6 @@ class MataKuliah extends Model
     protected $table = "mata_kuliah";
     protected $primaryKey = "MataKuliah";
     protected $fillable = [
-        "no","MataKuliah","NamaProdi","JumlahMahasiswa"
+        "MataKuliah","NamaProdi","JumlahMahasiswa"
     ];
 }
