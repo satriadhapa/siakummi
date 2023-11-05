@@ -10,9 +10,9 @@ class Mahasiswa extends Model
     protected $table = "mahasiswa";
     protected $primaryKey = "NIM";
     protected $fillable = [
-        "NIM","NamaLengkap","MataKuliah"
+        "NIM","NamaLengkap","MataKuliah","NamaProdi"
     ];
-    public function namaprodi()
+    public function programstudi()
     {
         return $this->belongsTo(ProgramStudi::class);
     }
