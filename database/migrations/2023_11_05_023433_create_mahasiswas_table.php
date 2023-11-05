@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string("NamaLengkap");
             $table->string("MataKuliah");
             $table->string("NamaProdi");
-            $table->integer("JumlahMatkul");
             $table->timestamps();
         });
     }

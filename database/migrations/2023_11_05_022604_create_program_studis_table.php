@@ -16,8 +16,6 @@ return new class extends Migration
             $table->string("NamaProdi");
             $table->integer("NIM");
             $table->string("MataKuliah");
-            $table->integer("JumlahMahasiswa");
-            $table->integer("JumlahMatkul");
             $table->timestamps();
         });
     }
