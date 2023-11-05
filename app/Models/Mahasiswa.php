@@ -12,4 +12,8 @@ class Mahasiswa extends Model
     protected $fillable = [
         "NIM","NamaLengkap","MataKuliah","NamaProdi"
     ];
+    public function NamaProdi()
+    {
+        return $this->belongsTo(ProgramStudi::class);
+    }
 }

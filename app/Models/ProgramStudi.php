@@ -12,4 +12,8 @@ class ProgramStudi extends Model
     protected $fillable = [
         "NamaProdi","NIM","MataKuliah"
     ];
+    public function mahasiswa()
+    {
+        return $this->hasMany(Mahasiswa::class);
+    }
 }
