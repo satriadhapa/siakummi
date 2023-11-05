@@ -21,11 +21,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <img src="{{asset('gambar/logo.png')}}" class="rounded mx-auto d-block" alt="..." width="500" height="475">
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>HALAMAN MATA KULIAH</h1>
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
     <!-- /.content-header -->
     <!-- Main content -->
+    <div class="content">
+      <div class="card card-info card-outline">
+        <div class="card-header">
+          <center><h3>CREATE DATA PROGRAM STUDI</h3></center>
+        </div>
+          <div class="card-body">
+              <form action="" method="post">
+                <div class="form-group">
+                  <input type="text" id="nama" class="form-control" placeholder="Nama Program Studi">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="Jumlah" class="form-control" placeholder="Nama Program Studi">
+                </div>
+              </form>
+          </div>
+      </div>
+  </div>
     <!-- /.content -->
   </div>
+  
   <!-- /.content-wrapper -->
 
   <!-- Control Sidebar -->

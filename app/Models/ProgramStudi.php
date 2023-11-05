@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProgramStudi extends Model
 {
-    use HasFactory;
+    protected $table = "program_studi";
+    protected $primaryKey = "NamaProdi";
+    protected $fillable = [
+        "no","NamaProdi","NIM","MataKuliah","JumlahMahasiswa","JumlahMatkul"
+    ];
 }
