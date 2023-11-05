@@ -35,25 +35,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="card card-info card-outline">
         <div class="card-header">
-          <center><h3>CREATE DATA MAHASISWA</h3></center>
+          <center><h3>EDIT DATA MAHASISWA</h3></center>
         </div>
           <div class="card-body">
-              <form action="{{ route('simpan-mahasiswa') }}" method="post">
+              <form action="{{ route('update-mahasiswa',$mahasiswa->NIM) }}" method="post">
                 {{ csrf_field() }}
                 <div class="form-group">
-                  <input type="text" id="NIM" name= "NIM" class="form-control" placeholder="NIM">
+                  <input type="text" id="NIM" name= "NIM" class="form-control" placeholder="NIM" value="{{$mahasiswa->NIM}}">
                 </div>
                 <div class="form-group">
-                  <input type="text" id="NamaLengkap" name="NamaLengkap" class="form-control" placeholder="Nama Lengkap">
+                  <input type="text" id="NamaLengkap" name="NamaLengkap" class="form-control" placeholder="Nama Lengkap" value="{{$mahasiswa->NamaLengkap}}">
                 </div>
                 <div class="form-group">
-                  <input type="text" id="MataKuliah" name="MataKuliah" class="form-control" placeholder="Mata Kuliah">
+                  <input type="text" id="MataKuliah" name="MataKuliah" class="form-control" placeholder="Mata Kuliah" value="{{$mahasiswa->MataKuliah}}">
                 </div>
                 <div class="form-group">
-                  <input type="text" id="NamaProdi" name="NamaProdi" class="form-control" placeholder="Nama Program Studi">
+                  <input type="text" id="NamaProdi" name="NamaProdi" class="form-control" placeholder="Nama Program Studi" value="{{$mahasiswa->NamaProdi}}">
                 </div>
                 <div class="form-group">
-                  <button type="submit" class="btn btn-success">Simpan</button>
+                  <button type="submit" class="btn btn-primary">Ubah Data</button>
                 </div>
               </form>
           </div>

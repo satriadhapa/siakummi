@@ -43,20 +43,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="card-body">
               <table class="table table-bordered">
                   <tr>
+                      <th>No</th>
+                      <th>NIM</th>
+                      <th>NAMA LENGKAP</th>
+                      <th>MATA KULIAH</th>
                       <th>NAMA PROGRAM STUDI</th>
-                      <th>JUMLAH MAHASISWA</th>
-                      <th>JUMLAH MATA KULIAH</th>
+                      <th>action</th>
                   </tr>
+                  @foreach ($dtmahasiswa as $item)
                   <tr>
-                      <td>teknik informatika</td>
-                      <td>80</td>
-                      <td>15</td>
-                  </tr>
+                    <td>{{$loop->iteration}}</td>
+                    <td>{{$item->NIM}}</td>
+                    <td>{{$item->NamaLengkap}}</td>
+                    <td>{{$item->MataKuliah}}</td>
+                    <td>{{$item->NamaProdi}}</td>
+                    <td>
+                      <a href="{{route('edit-mahasiswa', $item->NIM)}}"><button>edit</button></a> | 
+                      <a href="{{route('delete-mahasiswa', $item->NIM)}}"><button>delete</button></a>
+                    </td>
+                </tr>
+                  @endforeach
+                  
               </table>
           </div>
+          <div class="card-footer">
+            {{$dtmahasiswa->links()}}
+          </div>
       </div>
+      <!-- /.content -->
     </div>
-    <!-- /.content -->
   </div>
   
   <!-- /.content-wrapper -->
@@ -83,5 +98,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- jQuery -->
 @include('Template.script')
+@include('sweetalert::alert')
 </body>
 </html>

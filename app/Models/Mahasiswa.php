@@ -10,6 +10,6 @@ class Mahasiswa extends Model
     protected $table = "mahasiswa";
     protected $primaryKey = "NIM";
     protected $fillable = [
-        "no","NIM","NamaLengkap","MataKuliah","NamaProdi"
+        "NIM","NamaLengkap","MataKuliah","NamaProdi"
     ];
 }

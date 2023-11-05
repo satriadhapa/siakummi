@@ -16,3 +16,9 @@ Route::get('/matakuliah', [MataKuliahController::class, 'index'])->name('matakul
 Route::get('/create-prodi', [ProgramStudiController::class, 'create'])->name('create-programstudi');
 Route::get('/create-mahasiswa', [MahasiswaStudiController::class, 'create'])->name('create-mahasiswa');
 Route::get('/create-matakuliah', [MataKuliahController::class, 'create'])->name('create-matakuliah');
+
+Route::post('/simpan-mahasiswa', [MahasiswaStudiController::class, 'store'])->name('simpan-mahasiswa');
+
+Route::get('/edit-mahasiswa/{NIM}', [MahasiswaStudiController::class, 'edit'])->name('edit-mahasiswa');
+Route::post('/update-mahasiswa/{NIM}', [MahasiswaStudiController::class, 'update'])->name('update-mahasiswa');
+Route::get('/delete-mahasiswa/{NIM}', [MahasiswaStudiController::class, 'destroy'])->name('delete-mahasiswa');
