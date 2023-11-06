@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Mahasiswa extends Model
+class Prodi extends Model
 {
-    protected $table = "mahasiswa";
+    protected $table = "prodi";
     protected $primaryKey = "id";
     protected $fillable = [
-        "id","NIM","NamaLengkap","MataKuliah","NamaProdi","prodi_id"
+        "id","prodi"
     ];
-    public function prodi()
+    public function mahasiswa()
     {
-        return $this->belongsTo(Prodi::class);
+        return $this->hasMany(Mahasiswa::class);
     }
 }

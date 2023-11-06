@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mahasiswa;
+use App\Models\Prodi;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 
@@ -13,7 +14,7 @@ class MahasiswaStudiController extends Controller
      */
     public function index()
     {
-        $dtmahasiswa = Mahasiswa::all();
+        $dtmahasiswa = Mahasiswa::with('prodi')->latest()->paginate(2);
         return view("mahasiswa.mahasiswa", compact('dtmahasiswa'));
     }
     
@@ -22,7 +23,8 @@ class MahasiswaStudiController extends Controller
      */
     public function create()
     {
-        return view('mahasiswa.create-mahasiswa');
+        $prodi = Prodi::all();
+        return view('mahasiswa.create-mahasiswa', compact('prodi'));
     }
     public function details()
     {
@@ -39,7 +41,8 @@ class MahasiswaStudiController extends Controller
             "NIM" => $request->NIM,
             "NamaLengkap" => $request->NamaLengkap,
             "MataKuliah" => $request->MataKuliah,
-            "NamaProdi" => $request->NamaProdi
+            "NamaProdi" => $request->NamaProdi,
+            "prodi" => $request->prodi_id
         ]);
 
         return redirect('mahasiswa')->with('success', 'berhasil ditambahkan!');
@@ -58,8 +61,9 @@ class MahasiswaStudiController extends Controller
      */
     public function edit($id)
     {
-        $mahasiswa = Mahasiswa::findorfail($id);
-        return view('mahasiswa.edit-mahasiswa',compact('mahasiswa'));
+        $prodi = Prodi::all();
+        $mahasiswa = Mahasiswa::with('prodi')->findorfail($id);
+        return view('mahasiswa.edit-mahasiswa',compact('mahasiswa','prodi'));
     }
 
     /**

@@ -55,6 +55,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="form-group">
                   <input type="text" id="NamaProdi" name="NamaProdi" class="form-control" placeholder="Nama Program Studi" value="{{$mahasiswa->NamaProdi}}">
                 </div>
+              
+                <div class="form-group">
+                  <select name="prodi_id" id="prodi_id" class="form-control select2">
+                    <option disabled value>Pilih Prodi</option>
+                    <option value="{{$prodi->prodi_id}}">{{$prodi->prodi->prodi}}</option>
+                    @foreach ($prodi as $item)
+                      <option value="{{$item->id}}">{{$item->prodi}}</option>
+                    @endforeach
+                  </select>
+                </div>
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary">Ubah Data</button>
                 </div>
