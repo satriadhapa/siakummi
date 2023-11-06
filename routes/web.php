@@ -12,6 +12,7 @@ Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 Route::get('/prodi', [ProgramStudiController::class, 'index'])->name('programstudi');
 Route::get('/mahasiswa', [MahasiswaStudiController::class, 'index'])->name('mahasiswa');
 Route::get('/matakuliah', [MataKuliahController::class, 'index'])->name('matakuliah');
+Route::get('/detail-mahasiswa', [MahasiswaStudiController::class, 'details'])->name('detail-mahasiswa');
 
 Route::get('/create-prodi', [ProgramStudiController::class, 'create'])->name('create-programstudi');
 Route::get('/create-mahasiswa', [MahasiswaStudiController::class, 'create'])->name('create-mahasiswa');

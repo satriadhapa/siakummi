@@ -25,7 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>HALAMAN MAHASISWA</h1>
+            <h1>HALAMAN DETAIL MAHASISWA</h1>
           </div>
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -34,32 +34,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
       <div class="card card-info card-outline">
-        <div class="card-header">
-          <center><h3>CREATE DATA MAHASISWA</h3></center>
-        </div>
+          <div class="card-header">
+              
+              {{-- <div class="card-tools">
+                  <a href="{{route('mahasiswa')}}" class="btn btn-success"> Kembali <i class="fas fa-plus-square"></i></a>
+              </div> --}}
+          </div>
           <div class="card-body">
-              <form action="{{ route('simpan-mahasiswa') }}" method="post">
-                {{ csrf_field() }}
-                <div class="form-group">
-                  <input type="text" id="NIM" name= "NIM" class="form-control" placeholder="NIM">
-                </div>
-                <div class="form-group">
-                  <input type="text" id="NamaLengkap" name="NamaLengkap" class="form-control" placeholder="Nama Lengkap">
-                </div>
-                <div class="form-group">
-                  <input type="text" id="MataKuliah" name="MataKuliah" class="form-control" placeholder="Mata Kuliah">
-                </div>
-                <div class="form-group">
-                  <input type="text" id="NamaProdi" name="NamaProdi" class="form-control" placeholder="Nama Program Studi">
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-success">Simpan</button>
-                </div>
-              </form>
+              <table class="table table-bordered">
+                  <tr>
+                      <th>No</th>
+                      <th>NIM</th>
+                      <th>NAMA LENGKAP</th>
+                      <th>MATA KULIAH</th>
+                      <th>NAMA PROGRAM STUDI</th>
+                  </tr>
+                  @foreach ($dtmahasiswa as $item)
+                  <tr>
+                    <td>{{$loop->iteration}}</td>
+                    <td>{{$item->NIM}}</td>
+                    <td>{{$item->NamaLengkap}}</></td>
+                    <td>{{$item->MataKuliah}}</td>
+                    <td>{{$item->NamaProdi}}</td>
+                </tr>
+                  @endforeach
+                  
+              </table>
+          </div>
+          <div class="card-footer">
+            {{$dtmahasiswa->links()}}
           </div>
       </div>
-  </div>
-    <!-- /.content -->
+      <!-- /.content -->
+    </div>
   </div>
   
   <!-- /.content-wrapper -->
@@ -86,5 +93,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- jQuery -->
 @include('Template.script')
+@include('sweetalert::alert')
 </body>
 </html>

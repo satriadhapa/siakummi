@@ -54,9 +54,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <tr>
                     <td>{{$loop->iteration}}</td>
                     <td>{{$item->NIM}}</td>
-                    <td>{{$item->NamaLengkap}}</td>
+                    <td><a href="">{{$item->NamaLengkap}}</a></td>
                     <td>{{$item->MataKuliah}}</td>
-                    <td>{{$item->programstudi}}</td> 
+                    <td>{{$item->programstudi}}</td>
                     <td>
                       <a href="{{route('edit-mahasiswa', $item->NIM)}}"><button>edit</button></a> | 
                       <a href="{{route('delete-mahasiswa', $item->NIM)}}"><button>delete</button></a>
@@ -65,10 +65,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   @endforeach
                   
               </table>
+              
           </div>
-          {{-- <div class="card-footer">
-            {{$dtmahasiswa->links()}}
-          </div> --}}
       </div>
       <!-- /.content -->
     </div>

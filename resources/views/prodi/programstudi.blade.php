@@ -48,9 +48,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <th>JUMLAH MATA KULIAH</th>
                     </tr>
                     <tr>
-                        <td>teknik informatika</td>
-                        <td>80</td>
-                        <td>15</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </table>
             </div>

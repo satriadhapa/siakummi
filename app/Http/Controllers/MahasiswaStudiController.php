@@ -13,16 +13,20 @@ class MahasiswaStudiController extends Controller
      */
     public function index()
     {
-        $dtmahasiswa = Mahasiswa::with('programstudi')->paginate(2);
+        $dtmahasiswa = Mahasiswa::all();
         return view("mahasiswa.mahasiswa", compact('dtmahasiswa'));
     }
-
+    
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
         return view('mahasiswa.create-mahasiswa');
+    }
+    public function details()
+    {
+        return view('mahasiswa.detail-mahasiswa');
     }
 
     /**
@@ -35,6 +39,7 @@ class MahasiswaStudiController extends Controller
             "NIM" => $request->NIM,
             "NamaLengkap" => $request->NamaLengkap,
             "MataKuliah" => $request->MataKuliah,
+            "NamaProdi" => $request->NamaProdi
         ]);
 
         return redirect('mahasiswa')->with('success', 'berhasil ditambahkan!');
@@ -51,18 +56,18 @@ class MahasiswaStudiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($NIM)
+    public function edit($id)
     {
-        $mahasiswa = Mahasiswa::findorfail($NIM);
+        $mahasiswa = Mahasiswa::findorfail($id);
         return view('mahasiswa.edit-mahasiswa',compact('mahasiswa'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $NIM)
+    public function update(Request $request, string $id)
     {
-        $mahasiswa = Mahasiswa::findorfail($NIM);
+        $mahasiswa = Mahasiswa::findorfail($id);
         $mahasiswa->update($request->all());
         return redirect('mahasiswa')->with('success', 'berhasil diubah!');
     }
@@ -70,9 +75,9 @@ class MahasiswaStudiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $NIM)
+    public function destroy(string $id)
     {
-        $mahasiswa = Mahasiswa::findorfail($NIM);
+        $mahasiswa = Mahasiswa::findorfail($id);
         $mahasiswa->delete();
         return back()->with('info','data berhasil dihapus');
     }

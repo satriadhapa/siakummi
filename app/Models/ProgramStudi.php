@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProgramStudi extends Model
 {
-    protected $table = "program_studi";
-    protected $primaryKey = "NamaProdi";
+    protected $table = "programstudi";
+    protected $primaryKey = "id";
     protected $fillable = [
-        "NamaProdi","NIM","MataKuliah"
+       "id","prodi"
     ];
-    public function mahasiswa2()
+    public function mahasiswa()
     {
         return $this->hasMany(Mahasiswa::class);
     }

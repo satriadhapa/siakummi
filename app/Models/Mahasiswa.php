@@ -8,16 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Mahasiswa extends Model
 {
     protected $table = "mahasiswa";
-    protected $primaryKey = "NIM";
+    protected $primaryKey = "id";
     protected $fillable = [
-        "NIM","NamaLengkap","MataKuliah","NamaProdi"
+        "id","NIM","NamaLengkap","MataKuliah","prodi_id"
     ];
-    public function programstudi()
+    public function prodi()
     {
         return $this->belongsTo(ProgramStudi::class);
     }
-    // public function MataKuliah()
-    // {
-    //     return $this->belongsTo(ProgramStudi::class);
-    // }
 }
