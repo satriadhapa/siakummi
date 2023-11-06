@@ -6,6 +6,7 @@ use App\Models\Mahasiswa;
 use App\Models\Prodi;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
+use App\Http\Controllers\Post;
 
 class MahasiswaStudiController extends Controller
 {
@@ -14,10 +15,10 @@ class MahasiswaStudiController extends Controller
      */
     public function index()
     {
-        $dtmahasiswa = Mahasiswa::with('prodi')->latest()->paginate(2);
+        $dtmahasiswa = Mahasiswa::with('prodi')->latest()->paginate(10);
         return view("mahasiswa.mahasiswa", compact('dtmahasiswa'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      */
@@ -41,8 +42,7 @@ class MahasiswaStudiController extends Controller
             "NIM" => $request->NIM,
             "NamaLengkap" => $request->NamaLengkap,
             "MataKuliah" => $request->MataKuliah,
-            "NamaProdi" => $request->NamaProdi,
-            "prodi" => $request->prodi_id
+            "prodi_id" => $request->prodi_id
         ]);
 
         return redirect('mahasiswa')->with('success', 'berhasil ditambahkan!');
@@ -53,7 +53,8 @@ class MahasiswaStudiController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $post = Post::findorfail($id);
+        return view('');
     }
 
     /**
@@ -63,7 +64,7 @@ class MahasiswaStudiController extends Controller
     {
         $prodi = Prodi::all();
         $mahasiswa = Mahasiswa::with('prodi')->findorfail($id);
-        return view('mahasiswa.edit-mahasiswa',compact('mahasiswa','prodi'));
+        return view('mahasiswa.edit-mahasiswa', compact('mahasiswa', 'prodi'));
     }
 
     /**
@@ -83,6 +84,6 @@ class MahasiswaStudiController extends Controller
     {
         $mahasiswa = Mahasiswa::findorfail($id);
         $mahasiswa->delete();
-        return back()->with('info','data berhasil dihapus');
+        return back()->with('info', 'data berhasil dihapus');
     }
 }

@@ -47,8 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <th>NIM</th>
                       <th>NAMA LENGKAP</th>
                       <th>MATA KULIAH</th>
-                      <th>NAMA PROGRAM STUDI</th>
-                      <th>prodi</th>
+                      <th>PROGRAM STUDI</th>
                       <th>action</th>
                   </tr>
                   @foreach ($dtmahasiswa as $item)
@@ -57,7 +56,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{$item->NIM}}</td>
                     <td><a href="">{{$item->NamaLengkap}}</a></td>
                     <td>{{$item->MataKuliah}}</td>
-                    <td>{{$item->NamaProdi}}</td>
                     <td>{{$item->prodi->prodi}}</td>
                     <td>
                       <a href="{{route('edit-mahasiswa', $item->id)}}"><button>edit</button></a> | 
