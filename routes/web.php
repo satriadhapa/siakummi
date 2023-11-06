@@ -20,6 +20,6 @@ Route::get('/create-matakuliah', [MataKuliahController::class, 'create'])->name(
 
 Route::post('/simpan-mahasiswa', [MahasiswaStudiController::class, 'store'])->name('simpan-mahasiswa');
 
-Route::get('/edit-mahasiswa/{NIM}', [MahasiswaStudiController::class, 'edit'])->name('edit-mahasiswa');
-Route::post('/update-mahasiswa/{NIM}', [MahasiswaStudiController::class, 'update'])->name('update-mahasiswa');
-Route::get('/delete-mahasiswa/{NIM}', [MahasiswaStudiController::class, 'destroy'])->name('delete-mahasiswa');
+Route::get('/edit-mahasiswa/{id}', [MahasiswaStudiController::class, 'edit'])->name('edit-mahasiswa');
+Route::post('/update-mahasiswa/{id}', [MahasiswaStudiController::class, 'update'])->name('update-mahasiswa');
+Route::get('/delete-mahasiswa/{id}', [MahasiswaStudiController::class, 'destroy'])->name('delete-mahasiswa');

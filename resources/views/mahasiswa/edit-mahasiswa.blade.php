@@ -38,8 +38,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <center><h3>EDIT DATA MAHASISWA</h3></center>
         </div>
           <div class="card-body">
-              <form action="{{ route('update-mahasiswa',$mahasiswa->NIM) }}" method="post">
+              <form action="{{ route('update-mahasiswa',$mahasiswa->id) }}" method="post">
                 {{ csrf_field() }}
+                <div class="form-group">
+                  <input type="text" id="id" name= "id" class="form-control" placeholder="NIM" value="{{$mahasiswa->id}}">
+                </div>
                 <div class="form-group">
                   <input type="text" id="NIM" name= "NIM" class="form-control" placeholder="NIM" value="{{$mahasiswa->NIM}}">
                 </div>

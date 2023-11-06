@@ -10,7 +10,7 @@ class Mahasiswa extends Model
     protected $table = "mahasiswa";
     protected $primaryKey = "id";
     protected $fillable = [
-        "id","NIM","NamaLengkap","MataKuliah","prodi_id"
+        "id","NIM","NamaLengkap","MataKuliah","NamaProdi"
     ];
     public function prodi()
     {
