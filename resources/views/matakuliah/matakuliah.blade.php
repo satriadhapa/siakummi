@@ -43,16 +43,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="card-body">
               <table class="table table-bordered">
                   <tr>
-                      <th>NAMA PROGRAM STUDI</th>
-                      <th>JUMLAH MAHASISWA</th>
-                      <th>JUMLAH MATA KULIAH</th>
+                      <th>No</th>
+                      <th>NAMA MATA KULIAH</th>
                   </tr>
+                  @foreach ($dtmatakuliah as $item)
                   <tr>
-                      <td>teknik informatika</td>
-                      <td>80</td>
-                      <td>15</td>
+                    <td>{{$loop->iteration}}</td>
+                    <td>{{$item->matakuliah}}</td>
                   </tr>
-              </table>
+                  @endforeach
+                </table>
           </div>
       </div>
     </div>

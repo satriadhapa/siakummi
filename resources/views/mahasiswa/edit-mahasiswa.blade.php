@@ -46,9 +46,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="form-group">
                   <input type="text" id="NamaLengkap" name="NamaLengkap" class="form-control" placeholder="Nama Lengkap" value="{{$mahasiswa->NamaLengkap}}">
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                   <input type="text" id="MataKuliah" name="MataKuliah" class="form-control" placeholder="Mata Kuliah" value="{{$mahasiswa->MataKuliah}}">
-                </div>
+                </div> --}}
                           
                 <div class="form-group">
                   <select name="prodi_id" id="prodi_id" class="form-control select2">

@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProgramStudiController extends Controller
+class ProdiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view("prodi.programstudi");
+        return view("prodi.prodi");
     }
 
     /**
@@ -19,7 +19,7 @@ class ProgramStudiController extends Controller
      */
     public function create()
     {
-        return view("prodi.create-programstudi");
+        //
     }
 
     /**

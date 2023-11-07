@@ -35,18 +35,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="card card-info card-outline">
         <div class="card-header">
-          <center><h3>CREATE DATA PROGRAM STUDI</h3></center>
+          <center><h3>CREATE DATA MATA KULIAH</h3></center>
         </div>
-          <div class="card-body">
-              <form action="" method="post">
-                <div class="form-group">
-                  <input type="text" id="nama" class="form-control" placeholder="Nama Program Studi">
-                </div>
-                <div class="form-group">
-                  <input type="text" id="Jumlah" class="form-control" placeholder="Nama Program Studi">
-                </div>
-              </form>
-          </div>
+        <div class="card-body">
+          <form action="{{ route('simpan-matakuliah') }}" method="post">
+            {{ csrf_field() }}
+            <div class="form-group">
+              <input type="text" id="matakuliah" name= "matakuliah" class="form-control" placeholder="Mata Kuliah">
+            </div>
+            {{-- <div class="form-group">
+              <input type="text" id="prodi_id" name="prodi_id" class="form-control" placeholder="Program Studi">
+            </div>
+            <div class="form-group">
+              <select name="prodi_id" id="prodi_id" class="form-control select2">
+                @foreach ($prodi as $item)
+                    <option value="{{$item->id}}">{{$item->prodi}}</option>
+                @endforeach
+              </select>
+            </div> --}}
+            <div class="form-group">
+              <button type="submit" class="btn btn-success">Simpan</button>
+            </div>
+          </form>
+      </div>
       </div>
   </div>
     <!-- /.content -->

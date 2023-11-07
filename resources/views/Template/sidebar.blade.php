@@ -39,7 +39,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href=" {{route('programstudi')}} " class="nav-link">
+                <a href=" {{route('prodi')}} " class="nav-link">
                   <p>Program Studi</p>
                 </a>
               </li>

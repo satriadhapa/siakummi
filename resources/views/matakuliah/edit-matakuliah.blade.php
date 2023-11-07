@@ -25,7 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>HALAMAN PROGRAM STUDI</h1>
+            <h1>HALAMAN MAHASISWA</h1>
           </div>
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -33,29 +33,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content-header -->
     <!-- Main content -->
     <div class="content">
-        <div class="card card-info card-outline">
-            <div class="card-header">
-                
-                <div class="card-tools">
-                    <a href="{{route('create-programstudi')}}" class="btn btn-success">Tambah Data <i class="fas fa-plus-square"></i></a>
-                </div>
-            </div>
-            <div class="card-body">
-                <table class="table table-bordered">
-                    <tr>
-                        <th>NAMA PROGRAM STUDI</th>
-                        <th>JUMLAH MAHASISWA</th>
-                        <th>JUMLAH MATA KULIAH</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div>
+      <div class="card card-info card-outline">
+        <div class="card-header">
+          <center><h3>EDIT DATA MAHASISWA</h3></center>
         </div>
-    </div>
+          <div class="card-body">
+              <form action="{{ route('update-matakuliah',$mahasiswa->id) }}" method="post">
+                {{ csrf_field() }}
+                <div class="form-group">
+                  <input type="text" id="MataKuliah" name="MataKuliah" class="form-control" placeholder="Mata Kuliah" value="{{$mahasiswa->MataKuliah}}">
+                </div>
+                          
+                <div class="form-group">
+                  <select name="prodi_id" id="prodi_id" class="form-control select2">
+                    <option disabled value>Pilih Prodi</option>
+                    <option value="{{$mahasiswa->prodi_id}}">{{$mahasiswa->prodi->prodi}}</option>
+                    @foreach ($prodi as $item)
+                      <option value="{{$item->id}}">{{$item->prodi}}</option>
+                    @endforeach
+                  </select>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Ubah Data</button>
+                </div>
+              </form>
+          </div>
+      </div>
+  </div>
     <!-- /.content -->
   </div>
   

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MataKuliah;
 use Illuminate\Http\Request;
+use App\Models\Mahasiswa;
 
 class MataKuliahController extends Controller
 {
@@ -11,7 +13,8 @@ class MataKuliahController extends Controller
      */
     public function index()
     {
-        return view("matakuliah.matakuliah");
+        $dtmatakuliah = MataKuliah::all();
+        return view("matakuliah.matakuliah", compact('dtmatakuliah'));
     }
 
     /**
@@ -19,7 +22,8 @@ class MataKuliahController extends Controller
      */
     public function create()
     {
-        return view('matakuliah.create-matakuliah');
+        $matkul = MataKuliah::all();
+        return view('matakuliah.create-matakuliah', compact('matkul'));
     }
 
     /**
@@ -27,7 +31,11 @@ class MataKuliahController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+        MataKuliah::created([
+            'matakuliah' => $request->matakuliah
+        ]);
+        return redirect('matakuliah');
     }
 
     /**

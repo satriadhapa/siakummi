@@ -10,10 +10,11 @@ class Mahasiswa extends Model
     protected $table = "mahasiswa";
     protected $primaryKey = "id";
     protected $fillable = [
-        "id","NIM","NamaLengkap","MataKuliah","prodi_id"
+        "id","NIM","NamaLengkap","prodi_id" //"MataKuliah"
     ];
     public function prodi()
     {
         return $this->belongsTo(Prodi::class);
     }
+
 }

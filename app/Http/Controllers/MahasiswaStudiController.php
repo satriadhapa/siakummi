@@ -41,7 +41,7 @@ class MahasiswaStudiController extends Controller
         Mahasiswa::create([
             "NIM" => $request->NIM,
             "NamaLengkap" => $request->NamaLengkap,
-            "MataKuliah" => $request->MataKuliah,
+            // "MataKuliah" => $request->MataKuliah,
             "prodi_id" => $request->prodi_id
         ]);
 
@@ -53,8 +53,8 @@ class MahasiswaStudiController extends Controller
      */
     public function show(string $id)
     {
-        $post = Post::findorfail($id);
-        return view('');
+        // $post = Post::findorfail($id);
+        // return view('');
     }
 
     /**

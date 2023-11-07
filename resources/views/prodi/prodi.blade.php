@@ -25,7 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>HALAMAN MAHASISWA</h1>
+            <h1>HALAMAN PROGRAM STUDI</h1>
           </div>
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -33,36 +33,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content-header -->
     <!-- Main content -->
     <div class="content">
-      <div class="card card-info card-outline">
-        <div class="card-header">
-          <center><h3>CREATE DATA MAHASISWA</h3></center>
+        <div class="card card-info card-outline">
+            <div class="card-header">
+                
+                <div class="card-tools">
+                    <a href="{{route('create-prodi')}}" class="btn btn-success">Tambah Data <i class="fas fa-plus-square"></i></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>NAMA PROGRAM STUDI</th>
+                        <th>JUMLAH MAHASISWA</th>
+                        <th>JUMLAH MATA KULIAH</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
         </div>
-          <div class="card-body">
-              <form action="{{ route('simpan-mahasiswa') }}" method="post">
-                {{ csrf_field() }}
-                <div class="form-group">
-                  <input type="text" id="NIM" name= "NIM" class="form-control" placeholder="NIM">
-                </div>
-                <div class="form-group">
-                  <input type="text" id="NamaLengkap" name="NamaLengkap" class="form-control" placeholder="Nama Lengkap">
-                </div>
-                {{-- <div class="form-group">
-                  <input type="text" id="MataKuliah" name="MataKuliah" class="form-control" placeholder="Mata Kuliah">
-                </div> --}}
-                <div class="form-group">
-                  <select name="prodi_id" id="prodi_id" class="form-control select2">
-                    @foreach ($prodi as $item)
-                        <option value="{{$item->id}}">{{$item->prodi}}</option>
-                    @endforeach
-                  </select>
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-success">Simpan</button>
-                </div>
-              </form>
-          </div>
-      </div>
-  </div>
+    </div>
     <!-- /.content -->
   </div>
   
